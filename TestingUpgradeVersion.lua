@@ -5,7 +5,7 @@ local Window = WindUI:CreateWindow({
     Title = "UI Title",
     Icon = "door-open",
     Folder = "GrowHub",
-    Size = UDim2.fromOffset(380, 460),
+    Size = UDim2.fromOffset(580, 380),
     Transparent = true,
     Theme = "Dark",
     SideBarWidth = 200,
@@ -30,6 +30,6 @@ local Tab = Window:Tab({
 })
 local section_main = Tab:Section({ 
     Title = "Info",
-    TextXAlignment = "Left",
-    TextSize = 17, -- Default Size
+    TextSize = 34, -- Default Size
+    Icon="info"
 })
