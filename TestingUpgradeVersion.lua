@@ -33,36 +33,13 @@ local Window = WindUI:CreateWindow({
 })
 
 local Tab = Window:Tab({
-    Title = "Main",
-    Icon = "house",
+    Title = "NPC dialog",
+    Icon = "message-square-text",
     Locked = false,
 })
 local section_main = Tab:Section({ 
-    Title = "Main",
+    Title = "NPC Dialog",
     TextSize = 34, -- Default Size
-    Icon="house" -- Иконка дома
-})
-local Dialog = Window:Dialog({
-    Icon = "bird",
-    Title = "Dialog Title",
-    Content = "Content Text",
-    Buttons = {
-        {
-            Title = "Confirm",
-            Callback = function()
-                Window:Destroy()   -- При подтверждении закрываем окно
-            end,
-        },
-        {
-            Title = "Cancel",
-            Callback = function()
-                Dialog:Close()     -- При отмене просто скрываем диалог
-            end,
-        },
-    },
+    Icon="message-square-text" -- Иконка дома
 })
 
-Window.OnClose = function()
-    -- При попытке закрытия окна показываем диалог
-    Dialog:Show()
-end
