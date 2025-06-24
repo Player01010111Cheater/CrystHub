@@ -4,16 +4,15 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "UI Title",
     Icon = "door-open",
-    Author = "Example UI",
-    Folder = "CloudHub",
-    Size = UDim2.fromOffset(460, 460),
+    Folder = "GrowHub",
+    Size = UDim2.fromOffset(380, 460),
     Transparent = true,
     Theme = "Dark",
     SideBarWidth = 200,
     -- Background = "", -- rbxassetid only
     -- BackgroundImageTransparency = 0.42,
-    HideSearchBar = true,
-    ScrollBarEnabled = false,
+    HideSearchBar = false,
+    ScrollBarEnabled = true,
     User = {
         Enabled = true,
         Anonymous = false,
@@ -25,7 +24,12 @@ local Window = WindUI:CreateWindow({
 })
 
 local Tab = Window:Tab({
-    Title = "Tab Title",
-    Icon = "bird",
+    Title = "Info",
+    Icon = "info",
     Locked = false,
+})
+local section_main = Tab:Section({ 
+    Title = "Info",
+    TextXAlignment = "Left",
+    TextSize = 17, -- Default Size
 })
