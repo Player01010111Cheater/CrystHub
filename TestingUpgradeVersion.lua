@@ -148,15 +148,11 @@ local putallsummer = summerevent:Button({
 })
 local autobuy_event = shop:Paragraph({
     Title = "Event Shop",
-    Desc = "",
-    Color = "white",
-    Locked = false,
+    Desc = "Event Shop Autobuy",
 })
 local normal_autobuy = shop:Paragraph({
     Title = "Normal Shop",
-    Desc = "",
-    Color = "white",
-    Locked = false,
+    Desc = "Normal Shop Autobuy",
 })
 local dropdown_seed = shop:Dropdown({
     Title = "Seed Shop",
