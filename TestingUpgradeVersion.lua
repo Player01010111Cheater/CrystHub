@@ -1,5 +1,6 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
-
+player = game.Players.LocalPlayer
+player_gui = player.PlayerGui
 WindUI:AddTheme({
   Name = "Ocean",
   Accent = "#154359",
@@ -42,13 +43,16 @@ local section_main = Tab:Section({
     TextSize = 26, -- Default Size
     Icon="message-square-text" -- Иконка дома
 })
-local honeyshop = section_main:Toggle({
+local honeyshop = Tab:Toggle({
     Title = "Honey Shop UI",
     Desc = "Show Honey Shop",
     Type = "Checkbox",
     Default = false,
     Callback = function(state) 
-        print("Toggle Activated" .. tostring(state))
+        if state == true then
+            player_gui.HoneyEventShop_UI.Enabled = true
+        else
+            player_gui.HoneyEventShop_UI.Enabled = false
+        end
     end
 })
-
