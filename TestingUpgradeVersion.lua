@@ -33,13 +33,22 @@ local Window = WindUI:CreateWindow({
 })
 
 local Tab = Window:Tab({
-    Title = "NPC dialog",
+    Title = "Dialog UI",
     Icon = "message-square-text",
     Locked = false,
 })
 local section_main = Tab:Section({ 
-    Title = "NPC Dialog",
-    TextSize = 34, -- Default Size
+    Title = "Dialog UI",
+    TextSize = 26, -- Default Size
     Icon="message-square-text" -- Иконка дома
+})
+local honeyshop = section_main:Toggle({
+    Title = "Honey Shop UI",
+    Desc = "Show Honey Shop",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(state) 
+        print("Toggle Activated" .. tostring(state))
+    end
 })
 
