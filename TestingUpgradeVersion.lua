@@ -42,12 +42,27 @@ local section_main = Tab:Section({
     TextSize = 34, -- Default Size
     Icon="house" -- Иконка дома
 })
+local Dialog = Window:Dialog({
+    Icon = "bird",
+    Title = "Dialog Title",
+    Content = "Content Text",
+    Buttons = {
+        {
+            Title = "Confirm",
+            Callback = function()
+                Window:Destroy()   -- При подтверждении закрываем окно
+            end,
+        },
+        {
+            Title = "Cancel",
+            Callback = function()
+                Dialog:Close()     -- При отмене просто скрываем диалог
+            end,
+        },
+    },
+})
+
 Window.OnClose = function()
-    -- Вместо простого закрытия показываем меню подтверждения
-    local confirmed = ShowConfirmationDialog("Закрыть окно?") -- свою функцию напиши
-    if confirmed then
-        Window:Destroy()
-    else
-        -- не закрывать окно
-    end
+    -- При попытке закрытия окна показываем диалог
+    Dialog:Show()
 end
