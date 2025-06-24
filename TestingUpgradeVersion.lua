@@ -21,8 +21,8 @@ local Window = WindUI:CreateWindow({
     SideBarWidth = 200,
     -- Background = "", -- rbxassetid only
     -- BackgroundImageTransparency = 0.42,
-    HideSearchBar = false,
-    ScrollBarEnabled = true,
+    HideSearchBar = true,
+    ScrollBarEnabled = false,
     User = {
         Enabled = true,
         Anonymous = false,
@@ -42,6 +42,21 @@ local summerevent = Window:Tab({
     Title = "Summer Event",
     Icon = "sun",
     Locked = false
+})
+local shop = Window:Tab({
+    Title = "AutoBuy",
+    Icon = "shopping-cart",
+    Locked = false
+})
+local section_shop = shop:Section({
+    Title = "AutoBuy",
+    TextSize = 26,
+    Icon = "shopping-cart"
+})
+local sectionevent = summerevent:Section({
+    Title = "Summer Event",
+    TextSize = 26,
+    Icon = "sun"
 })
 local section_main = Tab:Section({ 
     Title = "Dialog UI",
@@ -129,5 +144,13 @@ local putallsummer = summerevent:Button({
     Locked = false,
     Callback = function()
         game:GetService("ReplicatedStorage").GameEvents.SummerHarvestRemoteEvent:FireServer("SumbitAllPlants")
+    end
+})
+local dropdown_seed = shop:Dropdown({
+    Title = "Select fruits to buy",
+    Values = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Cauliflower", "Watermelon", "Green Apple", "Avocado", "Banana", "Pineapple", "Kiwi", "Prickly Pear", "Loquat", "Feijoa", "Sugar Apple" },
+    Value = "Carrot",
+    Callback = function(option) 
+        print("Category selected: " .. option) 
     end
 })
