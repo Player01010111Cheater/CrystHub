@@ -1,39 +1,27 @@
--- Правильный способ загрузки WindUI
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/src/main.lua"))()
 
--- Создание окна с корректными параметрами
 local Window = WindUI:CreateWindow({
     Title = "WindUI Library",
-    SubTitle = "Version 1.0",  -- Добавьте подзаголовок
+    SubTitle = "Version 1.0",  -- Обязательный параметр!
     Size = UDim2.fromOffset(460, 460),
-    Theme = "Dark",
     
-    -- Настройки пользователя
+    -- Правильные параметры закрытия:
+    CloseAction = {
+        Confirm = true,  -- Включить подтверждение
+        Text = "Закрыть",  -- Текст кнопки
+        Description = "Ты уверен что хочешь закрыть меню? Ты не сможешь открыть её снова."  -- Описание
+    },
+    
+    -- Корректные настройки:
+    Theme = "Dark",
+    Search = true,  -- Включить поиск (аналог HideSearchBar)
+    Scroll = true,  -- Включить скролл
+    
     User = {
         Enabled = true,
         Anonymous = false,
         Callback = function() 
-            print("User profile clicked")
+            print("клик по профилю")
         end
-    },
-    
-    -- Настройки закрытия
-    CloseAction = {
-        Confirm = true,  -- Запрашивать подтверждение
-        Text = "Закрыть",  -- Текст кнопки
-        Description = "Вы уверены, что хотите закрыть окно?"  -- Описание
-    },
-    
-    -- Дополнительные настройки
-    Search = true,  -- Показывать поиск
-    Scroll = true  -- Включить скролл
+    }
 })
-
--- Пример добавления вкладки
-local Tab = Window:AddTab({
-    Title = "Главная",
-    Icon = "rbxassetid://129260712070622"
-})
-
--- Добавление секции
-local Section = Tab:AddSection("Основные настройки")
