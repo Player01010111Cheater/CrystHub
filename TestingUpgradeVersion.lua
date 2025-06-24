@@ -114,18 +114,13 @@ local dailyquest = Tab:Toggle({
     end
 })
 local autocollectsummerfruits = summerevent:Toggle({
-    Title = "Automatically collects all summer fruits.",
+    Title = "Automatically collects all summer fruits. (dont work)",
     Type = "Checkbox",
     Default = false,
     Callback = function (state)
         if state == true then
-            for _, v in pairs(workspace.Farm:GetChildren()) do
-                if v.Important.Data.Value == player.Name then
-                    print('yes')
-                    break
-                end
-            end
-        end        
+            print("adad")
+        end
     end
 })
 local putallsummer = summerevent:Button({
@@ -133,6 +128,6 @@ local putallsummer = summerevent:Button({
     Desc = "Stacks all summer fruits together.",
     Locked = false,
     Callback = function()
-        --  тут функция
+        game:GetService("ReplicatedStorage").GameEvents.SummerHarvestRemoteEvent:FireServer("SumbitAllPlants")
     end
 })
