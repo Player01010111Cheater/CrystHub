@@ -43,6 +43,32 @@ local section_main = Tab:Section({
     TextSize = 26, -- Default Size
     Icon="message-square-text" -- Иконка дома
 })
+local seedshop = Tab:Toggle({
+    Title="Seed Shop UI",
+    Desc="Show Seed Shop",
+    Type="Checkbox",
+    Default=false,
+    Callback = function (state)
+        if state == true then
+            player_gui.Seed_Shop.Enabled = true
+        else
+            player_gui.Seed_Shop.Enabled = false
+        end
+    end
+})
+local gearshop = Tab:Toggle({
+    Title = "Gear Shop UI",
+    Desc = "Show Gear Shop",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function (state)
+        if state == true then
+            player_gui.Gear_Shop.Enabled = true
+        else
+            player_gui.Gear_Shop.Enabled = false
+        end
+    end
+})
 local honeyshop = Tab:Toggle({
     Title = "Honey Shop UI",
     Desc = "Show Honey Shop",
@@ -53,6 +79,32 @@ local honeyshop = Tab:Toggle({
             player_gui.HoneyEventShop_UI.Enabled = true
         else
             player_gui.HoneyEventShop_UI.Enabled = false
+        end
+    end
+})
+local cosmeticshop = Tab:Toggle({
+    Title = "Cosmetic Shop UI",
+    Desc = "Show Cosmetic Shop",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function (state)
+        if state == true then
+            player_gui.CosmeticShop_UI.Enabled = true
+        else
+            player_gui.CosmeticShop_UI.Enabled = false
+        end
+    end
+})
+local dailyquest = Tab:Toggle({
+    Title = "Daily Quest UI",
+    Desc = "Open Daily Quests",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function (state)
+        if state == true then
+            player_gui.DailyQuests_UI.Enabled = true
+        else
+            player_gui.DailyQuests_UI.Enabled = false
         end
     end
 })
