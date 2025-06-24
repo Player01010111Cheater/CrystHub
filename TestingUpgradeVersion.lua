@@ -1,9 +1,26 @@
-local character = game.Players.idkidkidk999010.Character -- или игрок: game.Players.Игрок.Character
-local highlight = Instance.new("Highlight")
-highlight.Parent = character
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local Window = WindUI:CreateWindow({
+    Title = "WindUI Library",
+    Icon = "rbxassetid://129260712070622",
+    IconThemed = true,
+    Folder = "GrowHub",
+    Size = UDim2.fromOffset(580, 460),
+    Transparent = true,
+    Theme = "Dark",
+    User = {
+        Enabled = true, -- <- or false
+        Callback = function() print("clicked") end, -- <- optional
+        Anonymous = false -- <- or true
+    },
+    SideBarWidth = 200,
+    -- HideSearchBar = true, -- hides searchbar
+    ScrollBarEnabled = true, -- enables scrollbar
+    -- Background = "rbxassetid://13511292247", -- rbxassetid only
 
--- Настройки:
-highlight.FillColor = Color3.fromRGB(255, 100, 100)  -- Цвет "заполнения" (свечение внутри)
-highlight.FillTransparency = 0.7                     -- Прозрачность (0 - видно, 1 - невидно)
-highlight.OutlineColor = Color3.fromRGB(255, 255, 0)  -- Цвет контура
-highlight.OutlineTransparency = 0.3                   -- Прозрачность контура
+
+})
+local MainTab = Window:AddTab({
+    Title="Главная",
+    Icon="house",
+})  -- Создаём вкладку
+local FarmingTab = Window:AddTab("Фарминг")  -- Ещё одна вкладка
