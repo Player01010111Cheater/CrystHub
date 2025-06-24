@@ -38,6 +38,11 @@ local Tab = Window:Tab({
     Icon = "message-square-text",
     Locked = false,
 })
+local summerevent = Window:Tab({
+    Title = "Summer Event",
+    Icon = "sun",
+    Locked = false
+})
 local section_main = Tab:Section({ 
     Title = "Dialog UI",
     TextSize = 26, -- Default Size
@@ -106,5 +111,28 @@ local dailyquest = Tab:Toggle({
         else
             player_gui.DailyQuests_UI.Enabled = false
         end
+    end
+})
+local autocollectsummerfruits = summerevent:Toggle({
+    Title = "Automatically collects all summer fruits.",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function (state)
+        if state == true then
+            for _, v in pairs(workspace.Farm:GetChildren()) do
+                if v.Important.Data.Value == player.Name then
+                    print('yes')
+                    break
+                end
+            end
+        end        
+    end
+})
+local putallsummer = summerevent:Button({
+    Title = "Put all summer fruit",
+    Desc = "Stacks all summer fruits together.",
+    Locked = false,
+    Callback = function()
+        --  тут функция
     end
 })
