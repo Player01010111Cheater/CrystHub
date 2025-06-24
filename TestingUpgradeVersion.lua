@@ -151,10 +151,6 @@ local autobuy_event = shop:Section({
     Desc = "Event Shop Autobuy",
     TextSize = 26
 })
-local normal_autobuy = shop:Paragraph({
-    Title = "Normal Shop",
-    Desc = "Normal Shop Autobuy",
-})
 local dropdown_seed = shop:Dropdown({
     Title = "Seed Shop",
     Values = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Cauliflower", "Watermelon", "Green Apple", "Avocado", "Banana", "Pineapple", "Kiwi", "Prickly Pear", "Loquat", "Feijoa", "Sugar Apple" },
@@ -164,4 +160,8 @@ local dropdown_seed = shop:Dropdown({
     Callback = function(option) 
         print("Category selected: " .. option) 
     end
+})
+local normal_autobuy = shop:Paragraph({
+    Title = "Normal Shop",
+    Desc = "Normal Shop Autobuy",
 })
