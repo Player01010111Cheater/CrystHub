@@ -66,7 +66,7 @@ local section_main = Tab:Section({
 local seedshop = Tab:Toggle({
     Title="Seed Shop UI",
     Desc="Show Seed Shop",
-    Type="Checkbox",
+    Type="Toggle",
     Default=false,
     Callback = function (state)
         if state == true then
@@ -79,7 +79,7 @@ local seedshop = Tab:Toggle({
 local gearshop = Tab:Toggle({
     Title = "Gear Shop UI",
     Desc = "Show Gear Shop",
-    Type = "Checkbox",
+    Type = "Toggle",
     Default = false,
     Callback = function (state)
         if state == true then
@@ -92,7 +92,7 @@ local gearshop = Tab:Toggle({
 local honeyshop = Tab:Toggle({
     Title = "Honey Shop UI",
     Desc = "Show Honey Shop",
-    Type = "Checkbox",
+    Type = "Toggle",
     Default = false,
     Callback = function(state) 
         if state == true then
@@ -105,7 +105,7 @@ local honeyshop = Tab:Toggle({
 local cosmeticshop = Tab:Toggle({
     Title = "Cosmetic Shop UI",
     Desc = "Show Cosmetic Shop",
-    Type = "Checkbox",
+    Type = "Toggle",
     Default = false,
     Callback = function (state)
         if state == true then
@@ -118,7 +118,7 @@ local cosmeticshop = Tab:Toggle({
 local dailyquest = Tab:Toggle({
     Title = "Daily Quest UI",
     Desc = "Open Daily Quests",
-    Type = "Checkbox",
+    Type = "Toggle",
     Default = false,
     Callback = function (state)
         if state == true then
@@ -130,7 +130,7 @@ local dailyquest = Tab:Toggle({
 })
 local autocollectsummerfruits = summerevent:Toggle({
     Title = "Automatically collects all summer fruits. (dont work)",
-    Type = "Checkbox",
+    Type = "Toggle",
     Default = false,
     Callback = function (state)
         if state == true then
@@ -148,11 +148,13 @@ local putallsummer = summerevent:Button({
 })
 local autobuy_event = shop:Paragraph({
     Title = "Event Shop",
+    Desc = "",
     Color = "white",
     Locked = false,
 })
 local normal_autobuy = shop:Paragraph({
     Title = "Normal Shop",
+    Desc = "",
     Color = "white",
     Locked = false,
 })
