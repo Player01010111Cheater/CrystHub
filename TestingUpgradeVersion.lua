@@ -4,7 +4,7 @@ local Window = WindUI:CreateWindow({
     Icon = "rbxassetid://129260712070622",
     IconThemed = true,
     Folder = "GrowHub",
-    Size = UDim2.fromOffset(580, 460),
+    Size = UDim2.fromOffset(460, 460),
     Transparent = true,
     Theme = "Dark",
     User = {
@@ -16,7 +16,11 @@ local Window = WindUI:CreateWindow({
     -- HideSearchBar = true, -- hides searchbar
     ScrollBarEnabled = true, -- enables scrollbar
     -- Background = "rbxassetid://13511292247", -- rbxassetid only
-
+    CloseButton = {
+        Icon = "rbxassetid://11223344",
+        Text = "Закрыть окно",
+        Desc="Ты уверен что хочешь закрыть меню? Ты не сможешь открыть её снова."
+    }
 
 })
 local MainTab = Window:AddTab({
@@ -24,3 +28,4 @@ local MainTab = Window:AddTab({
     Icon="house",
 })  -- Создаём вкладку
 local FarmingTab = Window:AddTab("Фарминг")  -- Ещё одна вкладка
+
