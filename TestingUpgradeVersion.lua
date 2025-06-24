@@ -146,9 +146,10 @@ local putallsummer = summerevent:Button({
         game:GetService("ReplicatedStorage").GameEvents.SummerHarvestRemoteEvent:FireServer("SumbitAllPlants")
     end
 })
-local autobuy_event = shop:Paragraph({
+local autobuy_event = shop:Section({
     Title = "Event Shop",
     Desc = "Event Shop Autobuy",
+    TextSize = 26
 })
 local normal_autobuy = shop:Paragraph({
     Title = "Normal Shop",
@@ -159,7 +160,7 @@ local dropdown_seed = shop:Dropdown({
     Values = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Cauliflower", "Watermelon", "Green Apple", "Avocado", "Banana", "Pineapple", "Kiwi", "Prickly Pear", "Loquat", "Feijoa", "Sugar Apple" },
     Value = "Carrot",
     Multi = true,
-    AllowNone = false,
+    AllowNone = true,
     Callback = function(option) 
         print("Category selected: " .. option) 
     end
