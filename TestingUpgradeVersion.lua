@@ -1,13 +1,22 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
-
+WindUI:AddTheme({
+  Name = "Ocean",
+  Accent = "#1CA7EC",
+  Outline = "#FFFFFF",
+  Text = "#EFEFEF",
+  Placeholder = "#A0B0C0",
+  Background = "#0A1F29",
+  Button = "#23617E",
+  Icon = "#A5D8FF",
+})
 local Window = WindUI:CreateWindow({
     Title = "UI Title",
     Icon = "door-open",
     Folder = "GrowHub",
-    Size = UDim2.fromOffset(580, 380),
+    Size = UDim2.fromOffset(580, 300),
     Transparent = true,
-    Theme = "Dark",
+    Theme = "Ocean",
     SideBarWidth = 200,
     -- Background = "", -- rbxassetid only
     -- BackgroundImageTransparency = 0.42,
