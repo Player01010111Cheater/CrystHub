@@ -134,7 +134,17 @@ local autocollectsummerfruits = summerevent:Toggle({
     Default = false,
     Callback = function (state)
         if state == true then
-            print("adad")
+            for _, v in pairs(workspace.Farm:GetChildren()) do
+                if v.Important.Data.Owner.Value == player then
+                    for _, t in pairs(v.Important.Plants_Physical:GetChildren()) do
+                        for _, it in pairs(t.Fruits:GetChildren()) do
+                            if table.find({'Apple', 'Tomato'}, it.Name) then
+                                print('dada')
+                            end
+                        end
+                    end
+                end
+            end
         end
     end
 })
