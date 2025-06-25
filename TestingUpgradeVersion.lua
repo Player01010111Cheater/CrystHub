@@ -128,6 +128,7 @@ local dailyquest = Tab:Toggle({
         end
     end
 })
+
 local isAutoCollecting = false
 
 local autocollectsummerfruits = summerevent:Toggle({
@@ -161,7 +162,7 @@ local autocollectsummerfruits = summerevent:Toggle({
                                                 local ProximityPromptService = game:GetService("ProximityPromptService")
                                                 fireproximityprompt(i, 0)
                                                 i.MaxActivationDistance = 100000
-                                                wait(1)
+                                                wait(0.5)
                                             end
                                         end
                                     end
