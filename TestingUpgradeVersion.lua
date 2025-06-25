@@ -158,7 +158,7 @@ local autocollectsummerfruits = summerevent:Toggle({
                                     if validNames[t.Name] then
                                         print("Собираем: " .. t.Name)
                                         for _, i in pairs(t.Fruits:GetDescendants()) do
-                                            if i:IsA("ProximityPrompt") and i.Enabled then
+                                            if i.ClassName == "ProximityPrompt" then
                                                 -- Телепортнуться ближе
                                                 i.Parent.CanCollide = false
                                                 i.Parent.Transparency = 0
