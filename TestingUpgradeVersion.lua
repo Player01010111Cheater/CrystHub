@@ -86,7 +86,7 @@ local function change_chilledui()
     mainCorner.Parent = teleportui.Frame
 
     local mainStroke = Instance.new("UIStroke")
-    mainStroke.Color3 = Color3.fromRGB(255, 255, 255)
+    mainStroke.Color = Color3.fromRGB(255, 255, 255)
     mainStroke.Transparency = 0.5
     mainStroke.Thickness = 1.5
     mainStroke.Parent = teleportui.Frame
