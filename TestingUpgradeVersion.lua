@@ -48,6 +48,16 @@ local shop = Window:Tab({
     Icon = "shopping-cart",
     Locked = false
 })
+local custom = Window:Tab({
+    Title = "Custom",
+    Icon  = "earth",
+    Locked = false
+})
+local custom_section = custom:Section({
+    Title = "Custom",
+    Icon = "earth",
+    TextSize = 26
+})
 local section_shop = shop:Section({
     Title = "AutoBuy",
     TextSize = 26,
@@ -143,22 +153,6 @@ local dailyquest = Tab:Toggle({
 })
 
 local isAutoCollecting = false
-local test = summerevent:Button({
-    Title = "TEST",
-    Desc = "TEST global fireserver",
-    Callback = function ()
-        local mt = getrawmetatable(game:GetService("ReplicatedStorage"))
-        setreadonly(mt, false)
-        local old = mt.__namecall
-        mt.__namecall = newcclosure(function(self, ...)
-            local method = getnamecallmethod()
-            if method == "FireServer" or method == "InvokeServer" then
-                print("✉️", method, self:GetFullName(), ...)
-            end
-            return old(self, ...)
-        end)
-    end
-})
 local autocollectsummerfruits = summerevent:Toggle({
     Title = "Automatically collects all summer fruits. (dont work)",
     Type = "Toggle",
@@ -206,6 +200,52 @@ local autocollectsummerfruits = summerevent:Toggle({
             end)
         else
             print("Автосбор выключен")
+        end
+    end
+})
+
+local autobuy_event = shop:Section({
+    Title = "Event Shop",
+    Desc = "Event Shop Autobuy",
+    TextSize = 26
+})
+local honeydropdonw = shop:Dropdown({
+    Title = "Honey Shop",
+    Values = { "Flower Seed Pack", "Category B", "Category C" },
+    Value = { "Flower Seed Pack" },
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option) 
+        print("Categories selected: " .. game:GetService("HttpService"):JSONEncode(option))
+    end
+})
+local normal_autobuy = shop:Section({
+    Title = "Normal Shop",
+    Desc = "Normal Shop Autobuy",
+    TextSize = 26
+})
+local dropdown_seed = shop:Dropdown({
+    Title = "Seed Shop",
+    Values = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Cauliflower", "Watermelon", "Green Apple", "Avocado", "Banana", "Pineapple", "Kiwi", "Prickly Pear", "Loquat", "Feijoa", "Sugar Apple" },
+    Value = { "Carrot" },
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option)
+        print(option)
+        print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
+    end
+})
+local dropdown_teleport_ui = custom:Dropdown({
+    Ttile = "Custom Teleport UI",
+    Values = {"Basic", "Chilled UI"},
+    Value = "Basic",
+    AllowNone = true,
+    Callback = function (option)
+        print(option)
+        if option == 'Basic' then
+            -- 123
+        elseif option == "Chilled Ui" then
+            -- 321
         end
     end
 })
