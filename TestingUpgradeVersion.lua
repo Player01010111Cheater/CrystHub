@@ -161,9 +161,11 @@ local autocollectsummerfruits = summerevent:Toggle({
                                             if i.ClassName == "ProximityPrompt" then
                                                 -- Телепортнуться ближе
                                                 i.Parent.CanCollide = false
-                                                i.Parent.Transparency = 0
+                                                i.Parent.Transparency = 1
+                                                i.Parent.RequiresLineOfSight = false
                                                 i.Parent.CFrame = player.Character.HumanoidRootPart.CFrame
-                                                fireproximityprompt(i, 0)
+                                                i:InputHoldBegin()
+                                                i:InputHoldEnd()
                                                 wait(0.3)
                                             end
                                         end
@@ -223,4 +225,5 @@ local dropdown_seed = shop:Dropdown({
         print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
     end
 })
+
 
