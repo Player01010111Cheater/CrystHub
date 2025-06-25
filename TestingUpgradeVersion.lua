@@ -158,15 +158,17 @@ local autocollectsummerfruits = summerevent:Toggle({
                                     if validNames[t.Name] then
                                         print("Собираем: " .. t.Name)
                                         for _, i in pairs(t.Fruits:GetDescendants()) do
-                                            if i.ClassName == 'ProximityPrompt' then
-                                                local ProximityPromptService = game:GetService("ProximityPromptService")
-                                                i.MaxActivationDistance = 100000
-                                                game:GetService("ReplicatedStorage").ByteNetReliable:FireServer({i.Parent})
+                                            if i:IsA("ProximityPrompt") and i.Enabled then
+                                                -- Телепортнуться ближе
+                                                player.Character.HumanoidRootPart.CFrame = i.Parent.CFrame + Vector3.new(0, 2, 0)
+                                                wait(0.2)
+
+                                                -- Активировать
+                                                fireproximityprompt(i, 0)
                                                 wait(0.5)
                                             end
                                         end
                                     end
-
                                     -- Проверка выхода из цикла, если пользователь выключил toggle
                                     if not isAutoCollecting then return end
                                 end
