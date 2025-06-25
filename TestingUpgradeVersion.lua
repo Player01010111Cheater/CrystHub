@@ -146,7 +146,6 @@ local autocollectsummerfruits = summerevent:Toggle({
                             if v.Important.Data.Owner.Value == player.Name then
                                 for _, t in pairs(v.Important:FindFirstChild("Plants_Physical"):GetChildren()) do
                                     local validNames = {
-                                        ['Apple'] = true,
                                         ['Tomato'] = true,
                                         ['Pineapple'] = true,
                                         ['Prickly Pear'] = true,
@@ -160,14 +159,11 @@ local autocollectsummerfruits = summerevent:Toggle({
                                         for _, i in pairs(t.Fruits:GetDescendants()) do
                                             if i.ClassName == "ProximityPrompt" then
                                                 -- Телепортнуться ближе
-                                                i.Parent.CanCollide = false
-                                                i.Parent.Transparency = 1
                                                 i.RequiresLineOfSight = false
                                                 i.MaxActivationDistance = 9999
-                                                i.Parent.CFrame = player.Character.HumanoidRootPart.CFrame
                                                 i:InputHoldBegin()
                                                 i:InputHoldEnd()
-                                                wait(0.3)
+                                                wait(0.1)
                                             end
                                         end
                                     end
@@ -226,5 +222,4 @@ local dropdown_seed = shop:Dropdown({
         print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
     end
 })
-
 
