@@ -78,8 +78,8 @@ local seedshop = Tab:Toggle({
 })
 local function change_chilledui()
     local teleportui = player_gui:WaitForChild("Teleport_UI")
-    teleportui.Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    teleportui.Frame.BackgroundTransparency = 1
+    teleportui.Frame.BackgroundColor3 = Color3.fromRGB(10, 31, 41)
+    teleportui.Frame.BackgroundTransparency = 0
     -- Главный фрейм
     local mainCorner = Instance.new("UICorner")
     mainCorner.CornerRadius = UDim.new(0, 7)
@@ -104,7 +104,7 @@ local function change_chilledui()
     for name, radius in pairs(buttonCorners) do
         local element = teleportui:FindFirstChild(name)
         if element then
-            element.BackgroundTransparency = 1
+            element.BackgroundTransparency = 0
             local corner = Instance.new("UICorner")
             corner.CornerRadius = UDim.new(0, radius)
             corner.Parent = element
