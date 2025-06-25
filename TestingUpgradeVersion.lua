@@ -162,7 +162,8 @@ local autocollectsummerfruits = summerevent:Toggle({
                                                 -- Телепортнуться ближе
                                                 i.Parent.CanCollide = false
                                                 i.Parent.Transparency = 1
-                                                i.Parent.RequiresLineOfSight = false
+                                                i.RequiresLineOfSight = false
+                                                i.MaxActivationDistance = 9999
                                                 i.Parent.CFrame = player.Character.HumanoidRootPart.CFrame
                                                 i:InputHoldBegin()
                                                 i:InputHoldEnd()
