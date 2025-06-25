@@ -104,9 +104,9 @@ local function change_chilledui()
     for name, radius in pairs(buttonCorners) do
         local element = teleportui:FindFirstChild(name)
         if element then
-            element.BackgroundTransparency = 0
+            element.Visible = true
             local corner = Instance.new("UICorner")
-            corner.CornerRadius = UDim.new(0, radius)
+            corner.CornerRadius = UDim.new(0, 3)
             corner.Parent = element
         end
     end
