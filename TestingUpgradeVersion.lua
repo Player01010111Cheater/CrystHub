@@ -160,12 +160,11 @@ local autocollectsummerfruits = summerevent:Toggle({
                                         for _, i in pairs(t.Fruits:GetDescendants()) do
                                             if i:IsA("ProximityPrompt") and i.Enabled then
                                                 -- Телепортнуться ближе
-                                                player.Character.HumanoidRootPart.CFrame = i.Parent.CFrame + Vector3.new(0, 2, 0)
-                                                wait(0.2)
-
-                                                -- Активировать
+                                                i.CanCollide = false
+                                                i.Transparency = 0
+                                                i.Parent.CFrame = player.Character.HumanoidRootPart.CFrame
                                                 fireproximityprompt(i, 0)
-                                                wait(0.5)
+                                                wait(0.3)
                                             end
                                         end
                                     end
