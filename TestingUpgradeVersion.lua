@@ -48,16 +48,6 @@ local shop = Window:Tab({
     Icon = "shopping-cart",
     Locked = false
 })
-local custom = Window:Tab({
-    Title = "Custom",
-    Icon  = "earth",
-    Locked = false
-})
-local custom_section = custom:Section({
-    Title = "Custom",
-    Icon = "earth",
-    TextSize = 26
-})
 local section_shop = shop:Section({
     Title = "AutoBuy",
     TextSize = 26,
@@ -88,17 +78,19 @@ local seedshop = Tab:Toggle({
 })
 local function change_chilledui()
     local teleportui = player_gui:WaitForChild("Teleport_UI")
-
+    teleportui.Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    teleportui.Frame.BackgroundTransparency = 1
     -- Главный фрейм
     local mainCorner = Instance.new("UICorner")
     mainCorner.CornerRadius = UDim.new(0, 7)
     mainCorner.Parent = teleportui.Frame
 
     local mainStroke = Instance.new("UIStroke")
-    mainStroke.Color = Color3.fromRGB(255, 255, 255)
+    mainStroke.Color3 = Color3.fromRGB(255, 255, 255)
     mainStroke.Transparency = 0.5
     mainStroke.Thickness = 1.5
     mainStroke.Parent = teleportui.Frame
+
 
     -- Углы для всех кнопок
     local buttonCorners = {
@@ -112,6 +104,7 @@ local function change_chilledui()
     for name, radius in pairs(buttonCorners) do
         local element = teleportui:FindFirstChild(name)
         if element then
+            element.BackgroundTransparency = 1
             local corner = Instance.new("UICorner")
             corner.CornerRadius = UDim.new(0, radius)
             corner.Parent = element
