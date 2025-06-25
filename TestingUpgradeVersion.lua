@@ -160,7 +160,7 @@ local test = summerevent:Button({
     end
 })
 local autocollectsummerfruits = summerevent:Toggle({
-    Title = "Automatically collects all summer fruits (FIXED)",
+    Title = "Automatically collects all summer fruits. (dont work)",
     Type = "Toggle",
     Default = false,
     Callback = function(state)
@@ -168,91 +168,44 @@ local autocollectsummerfruits = summerevent:Toggle({
 
         if isAutoCollecting then
             task.spawn(function()
-                -- Кэшируем важные значения
-                local playerName = player.Name
-                local validNames = {
-                    ['Tomato'] = true,
-                    ['Pineapple'] = true,
-                    ['Prickly Pear'] = true,
-                    ['Sugar Apple'] = true,
-                    ['Banana'] = true,
-                    ['Kiwi'] = true
-                }
-
-                while isAutoCollecting and task.wait(0.1) do -- Уменьшил задержку
-                    -- Оптимизация: сначала собираем все возможные растения
-                    local allPlants = {}
+                while isAutoCollecting do
                     for _, v in pairs(workspace.Farm:GetChildren()) do
-                        if v:FindFirstChild("Important") and v.Important:FindFirstChild("Data") and 
-                           v.Important.Data:FindFirstChild("Owner") and v.Important.Data.Owner.Value == playerName then
-                            local plants = v.Important:FindFirstChild("Plants_Physical")
-                            if plants then
-                                for _, plant in pairs(plants:GetChildren()) do
-                                    if validNames[plant.Name] then
-                                        table.insert(allPlants, plant)
+                        if v:FindFirstChild("Important") and v.Important:FindFirstChild("Data") and v.Important.Data:FindFirstChild("Owner") then
+                            if v.Important.Data.Owner.Value == player.Name then
+                                for _, t in pairs(v.Important:FindFirstChild("Plants_Physical"):GetChildren()) do
+                                    local validNames = {
+                                        ['Tomato'] = true,
+                                        ['Pineapple'] = true,
+                                        ['Prickly Pear'] = true,
+                                        ['Sugar Apple'] = true,
+                                        ['Banana'] = true,
+                                        ['Kiwi'] = true
+                                    }
+
+                                    if validNames[t.Name] then
+                                        print("Собираем: " .. t.Name)
+                                        for _, i in pairs(t.Fruits:GetDescendants()) do
+                                            if i.ClassName == "ProximityPrompt" then
+                                                -- Телепортнуться ближе
+                                                i.RequiresLineOfSight = false
+                                                i.MaxActivationDistance = 9999
+                                                i.Parent.Parent = workspace.idkidkidk999010
+                                                fireproximityprompt(i,1,0)
+                                            end
+                                        end
                                     end
+                                    -- Проверка выхода из цикла, если пользователь выключил toggle
+                                    if not isAutoCollecting then return end
                                 end
                             end
                         end
-                        if not isAutoCollecting then return end
                     end
 
-                    -- Теперь обрабатываем только нужные растения
-                    for _, plant in ipairs(allPlants) do
-                        for _, fruit in pairs(plant.Fruits:GetDescendants()) do
-                            if fruit:IsA("ProximityPrompt") and fruit.Enabled then
-                                -- Форсируем активацию
-                                fruit.MaxActivationDistance = 1000
-                                fruit.RequiresLineOfSight = false
-                                fireproximityprompt(fruit)
-                            end
-                            if not isAutoCollecting then return end
-                        end
-                    end
+                    task.wait(0.3) -- подождать перед повторной проверкой
                 end
             end)
         else
             print("Автосбор выключен")
         end
-    end
-})
-
-local putallsummer = summerevent:Button({
-    Title = "Put all summer fruit",
-    Desc = "Stacks all summer fruits together.",
-    Locked = false,
-    Callback = function()
-        game:GetService("ReplicatedStorage").GameEvents.SummerHarvestRemoteEvent:FireServer("SumbitAllPlants")
-    end
-})
-local autobuy_event = shop:Section({
-    Title = "Event Shop",
-    Desc = "Event Shop Autobuy",
-    TextSize = 26
-})
-local honeydropdonw = shop:Dropdown({
-    Title = "Honey Shop",
-    Values = { "Flower Seed Pack", "Category B", "Category C" },
-    Value = { "Flower Seed Pack" },
-    Multi = true,
-    AllowNone = true,
-    Callback = function(option) 
-        print("Categories selected: " .. game:GetService("HttpService"):JSONEncode(option))
-    end
-})
-local normal_autobuy = shop:Section({
-    Title = "Normal Shop",
-    Desc = "Normal Shop Autobuy",
-    TextSize = 26
-})
-local dropdown_seed = shop:Dropdown({
-    Title = "Seed Shop",
-    Values = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Cauliflower", "Watermelon", "Green Apple", "Avocado", "Banana", "Pineapple", "Kiwi", "Prickly Pear", "Loquat", "Feijoa", "Sugar Apple" },
-    Value = { "Carrot" },
-    Multi = true,
-    AllowNone = true,
-    Callback = function(option)
-        print(option)
-        print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
     end
 })
