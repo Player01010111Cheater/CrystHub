@@ -138,7 +138,7 @@ local autocollectsummerfruits = summerevent:Toggle({
                 if v.Important.Data.Owner.Value == player then
                     for _, t in pairs(v.Important.Plants_Physical:GetChildren()) do
                         for _, it in pairs(t.Fruits:GetChildren()) do
-                            if table.find({'Apple', 'Tomato'}, it.Name) then
+                            if it.Name == 'Apple' or it.Name == 'Tomato' then
                                 print('dada')
                             end
                         end
@@ -164,7 +164,7 @@ local autobuy_event = shop:Section({
 local dropdown_seed = shop:Dropdown({
     Title = "Seed Shop",
     Values = { "Carrot", "Strawberry", "Blueberry", "Tomato", "Cauliflower", "Watermelon", "Green Apple", "Avocado", "Banana", "Pineapple", "Kiwi", "Prickly Pear", "Loquat", "Feijoa", "Sugar Apple" },
-    Value = "Carrot",
+    Value = { "Carrot" },
     Multi = true,
     AllowNone = true,
     Callback = function(option) 
