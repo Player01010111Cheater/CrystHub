@@ -86,6 +86,38 @@ local seedshop = Tab:Toggle({
         end
     end
 })
+local function change_chilledui()
+    local teleportui = player_gui:WaitForChild("Teleport_UI")
+
+    -- Главный фрейм
+    local mainCorner = Instance.new("UICorner")
+    mainCorner.CornerRadius = UDim.new(0, 7)
+    mainCorner.Parent = teleportui.Frame
+
+    local mainStroke = Instance.new("UIStroke")
+    mainStroke.Color = Color3.fromRGB(255, 255, 255)
+    mainStroke.Transparency = 0.5
+    mainStroke.Thickness = 1.5
+    mainStroke.Parent = teleportui.Frame
+
+    -- Углы для всех кнопок
+    local buttonCorners = {
+        Gear = 3,
+        Seeds = 3,
+        Pets = 3,
+        Garden = 3,
+        Sell = 3
+    }
+
+    for name, radius in pairs(buttonCorners) do
+        local element = teleportui:FindFirstChild(name)
+        if element then
+            local corner = Instance.new("UICorner")
+            corner.CornerRadius = UDim.new(0, radius)
+            corner.Parent = element
+        end
+    end
+end
 local gearshop = Tab:Toggle({
     Title = "Gear Shop UI",
     Desc = "Show Gear Shop",
@@ -235,17 +267,4 @@ local dropdown_seed = shop:Dropdown({
         print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
     end
 })
-local dropdown_teleport_ui = custom:Dropdown({
-    Ttile = "Custom Teleport UI",
-    Values = {"Basic", "Chilled UI"},
-    Value = "Basic",
-    AllowNone = true,
-    Callback = function (option)
-        print(option)
-        if option == 'Basic' then
-            -- 123
-        elseif option == "Chilled Ui" then
-            -- 321
-        end
-    end
-})
+change_chilledui()
