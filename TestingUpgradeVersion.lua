@@ -160,8 +160,8 @@ local autocollectsummerfruits = summerevent:Toggle({
                                         for _, i in pairs(t.Fruits:GetDescendants()) do
                                             if i.ClassName == 'ProximityPrompt' then
                                                 local ProximityPromptService = game:GetService("ProximityPromptService")
-                                                fireproximityprompt(i, 0)
                                                 i.MaxActivationDistance = 100000
+                                                game:GetService("ReplicatedStorage").ByteNetReliable:FireServer({i.Parent})
                                                 wait(0.5)
                                             end
                                         end
