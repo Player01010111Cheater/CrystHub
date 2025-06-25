@@ -102,6 +102,19 @@ local honeyshop = Tab:Toggle({
         end
     end
 })
+local function fireproximityprompt(prompt, amount, skip)
+    assert(prompt and prompt:IsA("ProximityPrompt"), "Expected ProximityPrompt")
+    local hold = prompt.HoldDuration
+    if skip then prompt.HoldDuration = 0 end
+
+    for i = 1, (amount or 1) do
+        prompt:InputHoldBegin()
+        if not skip then task.wait(hold) end
+        prompt:InputHoldEnd()
+    end
+
+    prompt.HoldDuration = hold
+end
 local cosmeticshop = Tab:Toggle({
     Title = "Cosmetic Shop UI",
     Desc = "Show Cosmetic Shop",
@@ -161,9 +174,7 @@ local autocollectsummerfruits = summerevent:Toggle({
                                                 -- Телепортнуться ближе
                                                 i.RequiresLineOfSight = false
                                                 i.MaxActivationDistance = 9999
-                                                i:InputHoldBegin()
-                                                i:InputHoldEnd()
-                                                wait(0.1)
+                                                fireproximityprompt(i,1,0)
                                             end
                                         end
                                     end
@@ -222,4 +233,5 @@ local dropdown_seed = shop:Dropdown({
         print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
     end
 })
+
 
