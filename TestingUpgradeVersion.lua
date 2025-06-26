@@ -265,7 +265,7 @@ local dropdown_seed = shop:Dropdown({
     end
 })
 local summerharvest = main:Paragraph({
-    Title = "summer event in".. get_summer,
+    Title = "summer event in".. get_summer(),
     Desc = "Showing summer harvest time.",
 })
 while wait(1) do
