@@ -66,6 +66,11 @@ local section_main = Tab:Section({
     TextSize = 26, -- Default Size
     Icon="message-square-text" -- Иконка дома
 })
+local section_main = main:Section({
+    Title = "Main",
+    Icon  = "house",
+    TextSize = 26
+})
 local seedshop = Tab:Toggle({
     Title="Seed Shop UI",
     Desc="Show Seed Shop",
@@ -260,12 +265,12 @@ local dropdown_seed = shop:Dropdown({
     end
 })
 local summerharvest = main:Paragraph({
-    Title = get_summer(),
+    Title = "summer event in".. get_summer,
     Desc = "Showing summer harvest time.",
 })
-while wait(3) do
+while wait(1) do
     if show_harvdest == true then
-        summerevent:SetTittle(get_summer())
+        summerevent:SetTitle(get_summer())
     else
         break
     end
