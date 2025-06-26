@@ -137,7 +137,7 @@ local honeyshop = Tab:Toggle({
 local function get_summer()
     for _, v in pairs(workspace.Interaction.UpdateItems.SummerHarvestEvent.Sign:GetDescendants()) do
         if v.Name == "Timer" then
-            return v.Text
+            return v.Parent.TextLabel.Text .. v.Text
         end
     end
 end
@@ -265,12 +265,12 @@ local dropdown_seed = shop:Dropdown({
     end
 })
 local summerharvest = main:Paragraph({
-    Title = "summer event in ".. get_summer(),
+    Title = get_summer(),
     Desc = "Showing summer harvest time.",
 })
 while wait(1) do
     if show_harvdest == true then
-        summerevent:SetTitle(get_summer())
+        summerharvest:SetTitle(get_summer())
     else
         break
     end
