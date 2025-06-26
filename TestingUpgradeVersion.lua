@@ -93,23 +93,11 @@ local function change_chilledui()
 
 
     -- Углы для всех кнопок
-    local buttonCorners = {
-        Gear = 3,
-        Seeds = 3,
-        Pets = 3,
-        Garden = 3,
-        Sell = 3
-    }
-
-    for name, radius in pairs(buttonCorners) do
-        local element = teleportui:FindFirstChild(name)
-        if element then
-            element.Visible = true
-            local corner = Instance.new("UICorner")
-            corner.CornerRadius = UDim.new(0, 3)
-            corner.Parent = element
-        end
-    end
+    local s = Instance.new("UICorner", teleportui.Garden)
+    local t = Instance.new("UICorner", teleportui.Pets)
+    t.Parent.Visible = true
+    t.CornerRadius = UDim.new(0,3)
+    s.CornerRadius = UDim.new(0,3)
 end
 local gearshop = Tab:Toggle({
     Title = "Gear Shop UI",
