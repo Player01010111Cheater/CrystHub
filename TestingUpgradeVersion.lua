@@ -32,7 +32,10 @@ local Window = WindUI:CreateWindow({
     },
 
 })
-
+local main = Window:Tab({
+    Title = "Main",
+    Icon = "house"
+})
 local Tab = Window:Tab({
     Title = "Dialog UI",
     Icon = "message-square-text",
@@ -256,13 +259,13 @@ local dropdown_seed = shop:Dropdown({
         print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
     end
 })
-local summerharvest = Tab:Paragraph({
-    Title = "Paragraph with Image, Thumbnail, Buttons",
+local summerharvest = main:Paragraph({
+    Title = get_summer(),
     Desc = "Showing summer harvest time.",
 })
-while wait(5) do
+while wait(3) do
     if show_harvdest == true then
-        -- da
+        summerevent:SetTittle(get_summer())
     else
         break
     end
