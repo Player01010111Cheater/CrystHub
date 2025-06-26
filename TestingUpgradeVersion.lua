@@ -78,18 +78,6 @@ local seedshop = Tab:Toggle({
 })
 local function change_chilledui()
     local teleportui = player_gui:WaitForChild("Teleport_UI")
-    teleportui.Frame.BackgroundColor3 = Color3.fromRGB(10, 31, 41)
-    teleportui.Frame.BackgroundTransparency = 0
-    -- Главный фрейм
-    local mainCorner = Instance.new("UICorner")
-    mainCorner.CornerRadius = UDim.new(0, 7)
-    mainCorner.Parent = teleportui.Frame
-
-    local mainStroke = Instance.new("UIStroke")
-    mainStroke.Color = Color3.fromRGB(255, 255, 255)
-    mainStroke.Transparency = 0.5
-    mainStroke.Thickness = 1.5
-    mainStroke.Parent = teleportui.Frame
 
     local buttonCorners = {
         Gear = 3,
@@ -111,6 +99,7 @@ local function change_chilledui()
         end
     end
 end
+change_chilledui()
 local gearshop = Tab:Toggle({
     Title = "Gear Shop UI",
     Desc = "Show Gear Shop",
@@ -137,6 +126,13 @@ local honeyshop = Tab:Toggle({
         end
     end
 })
+local function get_summer()
+    for _, v in pairs(workspace.Interaction.UpdateItems.SummerHarvestEvent.Sign:GetDescendants()) do
+        if v.Name == "Timer" then
+            return v.Text
+        end
+    end
+end
 local function fireproximityprompt(prompt, amount, skip)
     assert(prompt and prompt:IsA("ProximityPrompt"), "Expected ProximityPrompt")
     local hold = prompt.HoldDuration
@@ -176,7 +172,7 @@ local dailyquest = Tab:Toggle({
         end
     end
 })
-
+local show_harvdest = true
 local isAutoCollecting = false
 local autocollectsummerfruits = summerevent:Toggle({
     Title = "Automatically collects all summer fruits. (dont work)",
@@ -260,4 +256,14 @@ local dropdown_seed = shop:Dropdown({
         print("Category selected: " .. game:GetService("HttpService"):JSONEncode(option))
     end
 })
-change_chilledui()
+local summerharvest = Tab:Paragraph({
+    Title = "Paragraph with Image, Thumbnail, Buttons",
+    Desc = "Showing summer harvest time.",
+})
+while wait(5) do
+    if show_harvdest == true then
+        -- da
+    else
+        break
+    end
+end
