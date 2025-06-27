@@ -21,7 +21,7 @@ local function optimization_farm()
             -- Удаляем лишние объекты в Plants_Physical
             for _, i in pairs(v.Important.Plants_Physical:GetChildren()) do
                 local children = i:GetChildren()
-                for t = 116, #children do
+                for t = 1, #children do
                     children[t]:Destroy()
                 end
             end
