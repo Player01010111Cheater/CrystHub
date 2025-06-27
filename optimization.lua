@@ -13,16 +13,15 @@ local function optimization_farm()
             end
         end
 
-        print("База: " .. v.Important.Data.Owner.Value .. " | Моделей: " .. modelCount)
 
         -- Если моделей больше 151 и база чужая
-        if modelCount > 151 and v.Important.Data.Owner.Value ~= game.Players.LocalPlayer.Name then
+        if modelCount > 115 and v.Important.Data.Owner.Value ~= game.Players.LocalPlayer.Name then
             print("Чистим базу: " .. v.Important.Data.Owner.Value)
 
             -- Удаляем лишние объекты в Plants_Physical
             for _, i in pairs(v.Important.Plants_Physical:GetChildren()) do
                 local children = i:GetChildren()
-                for t = 151, #children do
+                for t = 116, #children do
                     children[t]:Destroy()
                 end
             end
@@ -38,4 +37,3 @@ local function optimization_main()
 end
 
 optimization_main()
-
