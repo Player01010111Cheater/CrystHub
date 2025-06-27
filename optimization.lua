@@ -2,21 +2,21 @@ local function optimization_farm()
     local farm_path = workspace.Farm
 
     for _, v in pairs(farm_path:GetChildren()) do
-        for _, i in pairs(v.Important:GetChildren()) do
+        for _, i in pairs(v.Important.Plants_Physical:GetChildren()) do
             -- Считаем количество моделей
             local modelCount = 0
-            for _, child in pairs(v.Farm.Important.Plants_Physical:GetChildren()) do
+            for _, child in pairs(i:GetChildren()) do
                 if child:IsA("Model") then
                     modelCount = modelCount + 1
                 end
             end
 
-            -- Если моделей больше 300 и база чужая
-            if modelCount > 151 and i.Data.Owner.Value ~= game.Players.LocalPlayer.Name then
+            -- Если моделей больше 151 и база чужая
+            if modelCount > 151 and i.Parent.Parent.Data.Owner.Value ~= game.Players.LocalPlayer.Name then
                 print("Чистим базу: " .. i.Data.Owner.Value)
 
-                -- Удаляем объекты начиная с 101-го
-                local children = v.Farm.Important.Plants_Physical:GetChildren()
+                -- Удаляем объекты начиная с 151-го
+                local children = i:GetChildren()
                 for t = 151, #children do
                     children[t]:Destroy()
                 end
