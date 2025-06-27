@@ -13,12 +13,11 @@ local function optimization_farm()
 
             -- Если моделей больше 151 и база чужая
             if modelCount > 151 and i.Parent.Parent.Data.Owner.Value ~= game.Players.LocalPlayer.Name then
-                print("Чистим базу: " .. i.Data.Owner.Value)
+                print("Чистим базу: " .. i.Parent.Parent.Data.Owner.Value)
 
                 -- Удаляем объекты начиная с 151-го
-                local children = i:GetChildren()
-                for t = 151, #children do
-                    children[t]:Destroy()
+                for t = 151, #i do
+                    i[t]:Destroy()
                 end
 
                 print("База почищена.")
