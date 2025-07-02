@@ -10,12 +10,12 @@ local pinkSky = Instance.new("Sky")
 pinkSky.Parent = Lighting
 
 -- Устанавливаем розовые текстуры неба (можно заменить ID)
-pinkSky.SkyboxBk = "rbxassetid://2710425166" -- Задний фон
-pinkSky.SkyboxDn = "rbxassetid://2710425321" -- Низ
-pinkSky.SkyboxFt = "rbxassetid://2710425503" -- Перед
-pinkSky.SkyboxLf = "rbxassetid://2710425682" -- Лево
-pinkSky.SkyboxRt = "rbxassetid://2710425845" -- Право
-pinkSky.SkyboxUp = "rbxassetid://2710426017" -- Верх
+pinkSky.SkyboxBk = "rbxassetid://271042516" -- Задний фон
+pinkSky.SkyboxDn = "rbxassetid://271077243" -- Низ
+pinkSky.SkyboxFt = "rbxassetid://271042556" -- Перед
+pinkSky.SkyboxLf = "rbxassetid://271042310" -- Лево
+pinkSky.SkyboxRt = "rbxassetid://271042467" -- Право
+pinkSky.SkyboxUp = "rbxassetid://271077958" -- Верх
 
 -- Отключаем звёзды и планеты
 pinkSky.CelestialBodiesShown = false
