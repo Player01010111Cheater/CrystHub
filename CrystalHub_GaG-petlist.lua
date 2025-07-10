@@ -3,12 +3,13 @@ local pets_rarity = {
     ["Bunny"] = true,
     ["Dog"] = true,
     ["Golden Lab"] = true,
+    ["Hamster"] = true,
   },
   ["Uncommon"] = {
     ["Black Bunny"] = true,
     ["Chicken"] = true,
     ["Cat"] = true,
-    ["Deer"] = true
+    ["Deer"] = true,
   },
   ["Rare"] = {
     ["Orange Tabby"] = true,
@@ -21,7 +22,8 @@ local pets_rarity = {
     ["Sea Turtle"] = true,
     ["Toucan"] = true,
     ["Wasp"] = true,
-    ["Honey Bee"] = true
+    ["Honey Bee"] = true,
+    ["Cooked Owl"] = true,
   },
   ["Legendary"] = {
     ["Cow"] = true,
@@ -38,7 +40,10 @@ local pets_rarity = {
     ["Scarlet Macaw"] = true,
     ["Polar Bear"] = true,
     ["Sea Otter"] = true,
-    ["Turtle"] = true
+    ["Turtle"] = true,
+    ["Raptor"] = true,
+    ["Pterodactyl"] = true,
+    ["Moth"] = true,
   },
   ["Mythical"] = {
     ["Snail"] = true,
@@ -48,10 +53,13 @@ local pets_rarity = {
     ["Butterfly"] = true,
     ["Echo Frog"] = true,
     ["Frog"] = true,
-    ["Moth"] = true,
     ["Hyacinth Macaw"] = true,
     ["Petal Bee"] = true,
-    ["Bear Bee"] = true
+    ["Bear Bee"] = true,
+    ["Brontosaurus"] = true,
+    ["Blood Bunny"] = true,
+    ["Blood Deer"] = true,
+    ["Blood Macaw"] = true,
   },
   ["Divine"] = {
     ["Dragonfly"] = true,
@@ -61,8 +69,8 @@ local pets_rarity = {
     ["Fennec Fox"] = true,
     ["Disco Bee"] = true,
     ["Mimic Octopus"] = true,
-    ["T‑Rex"] = true
-  }
+    ["T-Rex"] = true,
+  },
 }
 
 return pets_rarity
