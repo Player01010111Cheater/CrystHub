@@ -3,7 +3,6 @@ local pets_rarity = {
     ["Bunny"] = true,
     ["Dog"] = true,
     ["Golden Lab"] = true,
-    ["Bee"] = true
   },
   ["Uncommon"] = {
     ["Black Bunny"] = true,
