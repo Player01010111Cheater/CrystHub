@@ -66,3 +66,4 @@ local pets_rarity = {
   }
 }
 
+return pets_rarity
