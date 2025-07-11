@@ -73,3 +73,5 @@ local pets_rarity = {
     ["Raccoon"] = true
   },
 }
+
+return pets_rarity
