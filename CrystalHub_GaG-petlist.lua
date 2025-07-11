@@ -4,6 +4,7 @@ local pets_rarity = {
     ["Dog"] = true,
     ["Golden Lab"] = true,
     ["Hamster"] = true,
+    ["Squirrel"] = true,
   },
   ["Uncommon"] = {
     ["Black Bunny"] = true,
@@ -24,6 +25,7 @@ local pets_rarity = {
     ["Wasp"] = true,
     ["Honey Bee"] = true,
     ["Cooked Owl"] = true,
+    ["Zombie Chicken"] = true, -- Новый питомец, ивентовая награда
   },
   ["Legendary"] = {
     ["Cow"] = true,
@@ -44,6 +46,7 @@ local pets_rarity = {
     ["Raptor"] = true,
     ["Pterodactyl"] = true,
     ["Moth"] = true,
+    ["Panda"] = true, -- Новый питомец, упомянут в источниках
   },
   ["Mythical"] = {
     ["Snail"] = true,
@@ -72,5 +75,3 @@ local pets_rarity = {
     ["T-Rex"] = true,
   },
 }
-
-return pets_rarity
