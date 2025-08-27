@@ -14,7 +14,7 @@ local UICornerFrame = Instance.new("UICorner")
 local UICornerButtons = {}
 
 main.Name = "main"
-main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+main.Parent = gethui and gethui()
 main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 main.ResetOnSpawn = false
 
