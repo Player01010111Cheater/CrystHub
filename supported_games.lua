@@ -6,7 +6,7 @@ local games_id = {
     ["105520955111026"] = "FREE UGC Obby Hair",
     ["6654918151"] = "Trench War",
     ["100024922559690"] = "Steal A Snack",
-    ["101523718981169"] = "Steal A Meme"
+    ["113909146512320"] = "Steal A Meme"
 }
 
 return games_id
