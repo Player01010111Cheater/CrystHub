@@ -16,7 +16,7 @@ local items = {
     Locals = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/Locals.lua",
     LoadingScreen = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/LoadingScreen.lua",
     LoadThemes = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/LoadThemes.lua",
-    CurrentName = placeName
+    GameName = placeName
 }
 
 local utils = {}
