@@ -6,7 +6,8 @@ local urls = {
     SafeCall = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/SafeCall.lua",
     CustomCFrame = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/CustomCFrame.lua",
     Locals = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/Locals.lua",
-    LoadingScreen = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/LoadingScreen.lua"
+    LoadingScreen = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/LoadingScreen.lua",
+    LoadThemes = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/LoadThemes.lua"
 }
 
 local utils = {}
