@@ -4,7 +4,8 @@ end
 
 local urls = {
     SafeCall = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/SafeCall.lua",
-    CustomCFrame = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/CustomCFrame.lua"
+    CustomCFrame = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/CustomCFrame.lua",
+    Locals = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/utils/Locals.lua"
 }
 
 local utils = {}
