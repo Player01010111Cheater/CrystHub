@@ -4,13 +4,20 @@ if not gethui then game.Players.LocalPlayer:Kick("Failed To Get Script, Error Co
 local paths = {gethui(), game.CoreGui, game.Players.LocalPlayer:WaitForChild("PlayerGui")}
 local detct_val = 0
 
+local function delfromCoreGui()
+    for _, v in pairs(game.CoreGui:GetChildren()) do
+        for _, name in pairs(gui_names) do
+            if string.find(v.Name, name) then
+                v:Destroy()
+            end
+        end
+    end    
+end
 
 
-
-game.CoreGui.ChildAdded:Connect(function (item)
-    if string.find(item.Name, "HttpSpy") then
-        item:Remove()
-        item:Destroy()
-    end
+game.CoreGui.ChildAdded:Connect(function ()
+    delfromCoreGui()
 end)
+
+
 
