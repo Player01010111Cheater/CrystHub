@@ -1,4 +1,4 @@
 local gui_names = {
-    "Ketamine", "HttpSpy", "TurtleSpyGUI", "remotespy", "skidspy", "http"
+    "Ketamine", "HttpSpy", "remotespy", "skidspy", "http"
 }
 return gui_names
