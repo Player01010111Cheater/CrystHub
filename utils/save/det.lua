@@ -7,7 +7,7 @@ local detct_val = 0
 local function checkAndDestroy(gui)
     for _, name in pairs(gui_names) do
         if string.find(gui.Name:lower(), name:lower()) then
-            if gui.Remove then gui:Remove() elseif gui.Destroy then gui:Destroy() end
+            if gui.Destroy then gui:Destroy() elseif gui.Remove then gui:Remove() end
             detct_val = detct_val + 1
             if detct_val == 3 then game.Players.LocalPlayer:Kick("Failed To Get Script, Error Code: 401") end
             break
