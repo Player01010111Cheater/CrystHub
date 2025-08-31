@@ -1,1 +1,251 @@
-
+{
+  "DarkPremium": {
+    "Accent": "#8b5cf6",
+    "Dialog": "#18181b",
+    "Outline": "#FFFFFF",
+    "Text": "#FFFFFF",
+    "Placeholder": "#999999",
+    "Background": "#0e0e10",
+    "Button": "#8b5cf6",
+    "Icon": "#d4d4d8"
+  },
+  "DarkIce": {
+    "Accent": "#60a5fa",
+    "Dialog": "#1e293b",
+    "Outline": "#60a5fa",
+    "Text": "#f1f5f9",
+    "Placeholder": "#64748b",
+    "Background": "#0f172a",
+    "Button": "#3b82f6",
+    "Icon": "#60a5fa"
+  },
+  "DarkEmerald": {
+    "Accent": "#34d399",
+    "Dialog": "#1a1f1d",
+    "Outline": "#10b981",
+    "Text": "#ecfdf5",
+    "Placeholder": "#6ee7b7",
+    "Background": "#0d1512",
+    "Button": "#059669",
+    "Icon": "#a7f3d0"
+  },
+  "Ocean": {
+    "Accent": "#154359",
+    "Outline": "#FFFFFF",
+    "Text": "#EFEFEF",
+    "Placeholder": "#A0B0C0",
+    "Background": "#0A1F29",
+    "Button": "#23617E",
+    "Icon": "#A5D8FF"
+  },
+  "NeverLose": {
+    "Accent": "#00b7ff",
+    "Dialog": "#121a2a",
+    "Outline": "#0088cc",
+    "Text": "#e6f0ff",
+    "Placeholder": "#33ccff",
+    "Background": "#090e14",
+    "Button": "#006699",
+    "Icon": "#99d9ff"
+  },
+  "DesertNight": {
+    "Accent": "#f4a261",
+    "Dialog": "#1c1816",
+    "Outline": "#e76f51",
+    "Text": "#fefae0",
+    "Placeholder": "#f4a261",
+    "Background": "#0f0d0a",
+    "Button": "#d9480f",
+    "Icon": "#ffd7ba"
+  },
+  "ForestGloom": {
+    "Accent": "#2f9e44",
+    "Dialog": "#161d18",
+    "Outline": "#219653",
+    "Text": "#e9f5db",
+    "Placeholder": "#52b788",
+    "Background": "#0a110d",
+    "Button": "#1a7431",
+    "Icon": "#95d5b2"
+  },
+  "ArcticFrost": {
+    "Accent": "#a3bffa",
+    "Dialog": "#1e2a3c",
+    "Outline": "#60a5fa",
+    "Text": "#f0f4ff",
+    "Placeholder": "#93c5fd",
+    "Background": "#0d1321",
+    "Button": "#3b82f6",
+    "Icon": "#bfdbfe"
+  },
+  "VolcanicAsh": {
+    "Accent": "#ff6b6b",
+    "Dialog": "#1a1414",
+    "Outline": "#dc2626",
+    "Text": "#fee2e2",
+    "Placeholder": "#f87171",
+    "Background": "#0c0909",
+    "Button": "#b91c1c",
+    "Icon": "#fecaca"
+  },
+  "CosmicVoid": {
+    "Accent": "#8b5cf6",
+    "Dialog": "#171625",
+    "Outline": "#6d28d9",
+    "Text": "#ede9fe",
+    "Placeholder": "#a78bfa",
+    "Background": "#0d0b1b",
+    "Button": "#5b21b6",
+    "Icon": "#c4b5fd"
+  },
+  "JungleMist": {
+    "Accent": "#4d908e",
+    "Dialog": "#15201e",
+    "Outline": "#3a706e",
+    "Text": "#d9eceb",
+    "Placeholder": "#67b6b4",
+    "Background": "#0b1211",
+    "Button": "#2e5957",
+    "Icon": "#a3d9d7"
+  },
+  "SunsetGlow": {
+    "Accent": "#ff8e53",
+    "Dialog": "#1d1613",
+    "Outline": "#f97316",
+    "Text": "#fef3e7",
+    "Placeholder": "#ffab76",
+    "Background": "#0f0b09",
+    "Button": "#ea580c",
+    "Icon": "#ffd6b3"
+  },
+  "MountainDusk": {
+    "Accent": "#64748b",
+    "Dialog": "#181c24",
+    "Outline": "#475569",
+    "Text": "#e2e8f0",
+    "Placeholder": "#94a3b8",
+    "Background": "#0e1117",
+    "Button": "#334155",
+    "Icon": "#cbd5e1"
+  },
+  "AuroraBorealis": {
+    "Accent": "#22d3ee",
+    "Dialog": "#121a2a",
+    "Outline": "#06b6d4",
+    "Text": "#e0f7ff",
+    "Placeholder": "#4ddbff",
+    "Background": "#090e14",
+    "Button": "#0891b2",
+    "Icon": "#a5f3fc"
+  },
+  "CrimsonDawn": {
+    "Accent": "#dc2626",
+    "Dialog": "#1c1415",
+    "Outline": "#b91c1c",
+    "Text": "#fee2e2",
+    "Placeholder": "#f87171",
+    "Background": "#0c090a",
+    "Button": "#991b1b",
+    "Icon": "#fecaca"
+  },
+  "TwilightSky": {
+    "Accent": "#9d4edd",
+    "Dialog": "#1a0f2b",
+    "Outline": "#c084fc",
+    "Text": "#f3e8ff",
+    "Placeholder": "#d8b4fe",
+    "Background": "#0d0816",
+    "Button": "#7c3aed",
+    "Icon": "#e9d5ff"
+  },
+  "LavaFlow": {
+    "Accent": "#ff3d00",
+    "Dialog": "#1a0c0c",
+    "Outline": "#ff5722",
+    "Text": "#fff1f0",
+    "Placeholder": "#ff8a65",
+    "Background": "#0c0606",
+    "Button": "#e64a19",
+    "Icon": "#ffccbc"
+  },
+  "MysticForest": {
+    "Accent": "#6b8e23",
+    "Dialog": "#101908",
+    "Outline": "#7cb342",
+    "Text": "#edf7e3",
+    "Placeholder": "#9ccc65",
+    "Background": "#0b1106",
+    "Button": "#558b2f",
+    "Icon": "#c5e1a5"
+  },
+  "NeonCity": {
+    "Accent": "#ff00ff",
+    "Dialog": "#1b0b1b",
+    "Outline": "#e91e63",
+    "Text": "#ffe6ff",
+    "Placeholder": "#ff80ff",
+    "Background": "#0c060c",
+    "Button": "#d500f9",
+    "Icon": "#ff99ff"
+  },
+  "DesertStorm": {
+    "Accent": "#f59e0b",
+    "Dialog": "#1c1209",
+    "Outline": "#fbbf24",
+    "Text": "#fff7ed",
+    "Placeholder": "#fcd34d",
+    "Background": "#0f0804",
+    "Button": "#d97706",
+    "Icon": "#ffe8a1"
+  },
+  "PolarNight": {
+    "Accent": "#0ea5e9",
+    "Dialog": "#0a1c2a",
+    "Outline": "#38bdf8",
+    "Text": "#e0f7ff",
+    "Placeholder": "#7dd3fc",
+    "Background": "#040c14",
+    "Button": "#0284c7",
+    "Icon": "#a5f3fc"
+  },
+  "CrimsonMist": {
+    "Accent": "#b91c1c",
+    "Dialog": "#1b0d0d",
+    "Outline": "#f87171",
+    "Text": "#fee2e2",
+    "Placeholder": "#fca5a5",
+    "Background": "#0c0606",
+    "Button": "#991b1b",
+    "Icon": "#fecaca"
+  },
+  "SolarFlare": {
+    "Accent": "#facc15",
+    "Dialog": "#1a1608",
+    "Outline": "#eab308",
+    "Text": "#fff9db",
+    "Placeholder": "#fde68a",
+    "Background": "#0f0c03",
+    "Button": "#ca8a04",
+    "Icon": "#fff7b2"
+  },
+  "DeepSea": {
+    "Accent": "#0284c7",
+    "Dialog": "#071a26",
+    "Outline": "#0ea5e9",
+    "Text": "#dbeafe",
+    "Placeholder": "#7dd3fc",
+    "Background": "#03141e",
+    "Button": "#0369a1",
+    "Icon": "#7dd3fc"
+  },
+  "EnchantedTwilight": {
+    "Accent": "#8b5cf6",
+    "Dialog": "#1b1129",
+    "Outline": "#a78bfa",
+    "Text": "#f5f3ff",
+    "Placeholder": "#c4b5fd",
+    "Background": "#0c0817",
+    "Button": "#7c3aed",
+    "Icon": "#d8b4fe"
+  }
+}
