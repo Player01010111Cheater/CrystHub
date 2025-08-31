@@ -8,8 +8,8 @@ local status = {
   Working on [ PC ]
     ∣| Grow A Garden : 🟠
     ∣| Grow Your Speed : 🟢
-    ∣| Impossible Squid Game! Glass Bridge2 : 🟢
-    ∣| Iq0 Glass Bridge : 🟢
+    ∣| Impossible Squid Game! Glass Bridge 2 : 🟢
+    ∣| Iq 0 Glass Bridge : 🟢
     ∣| FREE UGC Obby Hair : 🟢
     ∣| Trench War : 🟢
     ∣| Steal A Snack : 🟢
@@ -26,3 +26,4 @@ local status = {
     ∣| Steal A Meme : 🟢
   "
 }
+return status
