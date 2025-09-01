@@ -12,17 +12,10 @@ if not hookfunction or not newcclosure then
     error("hookfunction or newcclosure not supported")
 end
 
--- Проверка и вывод сообщения загрузки
-if print then
-    print("[CrystGuard] Loading AntiHttp...")
-elseif rconsoleprint then
-    rconsoleprint("[CrystGuard] Loading AntiHttp...\n")
-end
-
 local function hookFunction(func)
     local old = hookfunction(func, newcclosure(function(...)
         for _, arg in ipairs({...}) do
-            if tostring(arg):find("http") or tostring(arg):find(".com") then
+            if tostring(arg):find("http") or tostring(arg):find("%.%w+$") then
                 while true do end
             end
         end
@@ -30,7 +23,6 @@ local function hookFunction(func)
     end))
 end
 
--- Фильтрация nil-значений из таблицы functions
 for _, func in pairs(functions) do
     if func then
         hookFunction(func)
