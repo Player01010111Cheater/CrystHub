@@ -26,7 +26,7 @@ end
             search_ingui(gui)
         end
         path.ChildAdded:Connect(function (it)
-            search_ingui(it)
+            print(it.Name)
         end)
     end
 end)()
