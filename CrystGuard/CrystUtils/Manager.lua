@@ -4,7 +4,8 @@ end
 
 local cryst_items = {
     ApplySystemInject = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/ApplySystemInject.lua",
-    SendWebHook = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/SendWebHook.lua"
+    SendWebHook = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/SendWebHook.lua",
+    search_textlabels = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/finder/FindInTextLabels.lua"
 }
 
 local manager = {}
