@@ -3,3 +3,4 @@ local CrystConfig = {
   MaxResult = 3,
   Webhook = "URL",
 }
+return CrystConfig
