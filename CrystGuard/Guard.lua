@@ -1,33 +1,37 @@
 print("[CrystGuard] Loading Luau Guard...")
+if not gethui then while true do end end
 local gui_names = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/data/GuiNames.lua"))()
 local config = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/data/CrystConfig.lua"))()
 local manager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/Manager.lua"))()
-if not gethui then while true do end end
+
+--// locals
 local paths = {gethui(), game.CoreGui, game.Players.LocalPlayer:WaitForChild("PlayerGui")}
 local detct_val = 0
-local function del_ui(gui_del)
-    gui_del.Enabled = false
-    task.wait(0.3)
-    if gui_del.Parent == gethui() then gui_del:Remove() gui_del:Destroy() else gui_del:Destroy() end
-    detct_val = detct_val + 1
-    if detct_val == config.MaxResult then while true do end end
-end
-local function search_ingui(guis)
+
+--// functions
+local function check_ui(ui)
     for _, name in pairs(gui_names) do
-        if string.find(guis.Name:lower(), name:lower()) then
-            manager.search_textlabels(guis, gui_names)
-            del_ui(guis)
+        if string.find(ui.Name:lower(),name:lower()) then
+            ui:Destroy()
+            detct_val = detct_val + 1
+            if detct_val == config.MaxResult then while true do end end
+        else
+            manager.search_textlabels(ui, gui_names)
+            detct_val = detct_val + 1
+            if detct_val == config.MaxResult then while true do end end
         end
     end
 end
+
 (function ()
     for _, path in pairs(paths) do
         for _, gui in pairs(path:GetChildren()) do
-            search_ingui(gui)
+            check_ui(gui)
         end
         path.ChildAdded:Connect(function (it)
+            it.Enabled = false
             task.wait(0.3)
-            print(it.Name)
+            check_ui(it)
         end)
     end
 end)()
