@@ -1,4 +1,4 @@
-local status = "
+local status = [[
   🟢 = Working
   🟡 = Down [ Fixing / Risk Ban ]
   🟠 = Developing [ New Game / Updating ]
@@ -23,5 +23,6 @@ local status = "
     ∣| Trench War : 🟢
     ∣| Steal A Snack : 🟢
     ∣| Steal A Meme : 🟢
-  "
+]]
+
 return status
