@@ -27,15 +27,13 @@ local function search_ingui(guis)
         end
     end
 end
-(function ()
-    for _, path in pairs(paths) do
-        for _, gui in pairs(path:GetChildren()) do
-            search_ingui(gui)
-        end
-        path.ChildAdded:Connect(function (it)
-            search_ingui(it)
-        end)
-        print(path)
+for _, path in pairs(paths) do
+    for _, gui in pairs(path:GetChildren()) do
+        search_ingui(gui)
     end
-end)()
+    path.ChildAdded:Connect(function (it)
+        search_ingui(it)
+    end)
+    print(path)
+end
 
