@@ -35,5 +35,7 @@ end
         path.ChildAdded:Connect(function (it)
             search_ingui(it)
         end)
+        print(path)
     end
 end)()
+
