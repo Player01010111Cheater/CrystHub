@@ -26,6 +26,7 @@ end
             search_ingui(gui)
         end
         path.ChildAdded:Connect(function (it)
+            task.wait(0.3)
             print(it.Name)
         end)
     end
