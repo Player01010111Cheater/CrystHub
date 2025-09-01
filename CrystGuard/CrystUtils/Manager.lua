@@ -3,7 +3,7 @@ local function req(url)
 end
 
 local cryst_items = {
-    ApplySystemInject = "",
+    ApplySystemInject = "https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/ApplySystemInject.lua",
     SendWebHook = ""
 }
 
