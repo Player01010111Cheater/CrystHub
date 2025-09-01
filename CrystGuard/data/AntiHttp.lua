@@ -1,3 +1,4 @@
+print("[Debug] 123.")
 local functions = {
     rconsoleprint,
     print,
