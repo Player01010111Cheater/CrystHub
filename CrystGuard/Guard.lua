@@ -9,42 +9,31 @@ local menus = {
 if not gethui then while true do end end
 local paths = {gethui(), game.CoreGui, game.Players.LocalPlayer:WaitForChild("PlayerGui")}
 local detct_val = 0
-local function search_ingui(gui, name)
-    if string.find(gui.Name:lower(), name:lower()) and gui:IsA("ScreenGui") then
-        gui.Enabled = false
-        task.wait(0.05)
-        gui:Destroy()
-        detct_val = detct_val + 1
-        if detct_val == config.MaxResult then while true do end end
+local function del_ui(gui_del)
+    gui_del.Enabled = false
+    task.wait(0.3)
+    if gui_del.Parent == gethui() then gui_del:Remove() gui_del:Destroy() else gui_del:Destroy() end
+    detct_val = detct_val + 1
+    if detct_val == config.MaxResult then while true do end end
+end
+local function search_ingui(guis)
+    for _, menu in pairs(menus) do
+        for _, name in pairs(gui_names) do
+            if string.find(guis.Name:lower(), name:lower()) then
+                del_ui(guis)
+            elseif string.find(guis.Name:lower(), menu:lower()) then
+                manager.search_textlabels(menu, gui_names)
+            end
+        end
     end
 end
 (function ()
     for _, path in pairs(paths) do
         for _, gui in pairs(path:GetChildren()) do
-            for _, name in pairs(gui_names) do
-                search_ingui(gui, name)
-            end
-            for _, g in pairs(menus) do
-                if gui.Name == g then
-                    manager.search_textlabels(gui, gui_names)
-                end
-            end
+            search_ingui(gui)
         end
         path.ChildAdded:Connect(function (it)
-            for _, na in pairs(gui_names) do
-                if string.find(it.Name:lower(), na:lower()) and it:IsA("ScreenGui") then
-                    it.Enabled = false
-                    task.wait(0.3)
-                    if it.Parent == gethui() then it:Destroy() it:Remove() else it:Destroy() end
-                    detct_val = detct_val + 1
-                    if detct_val == config.MaxResult then while true do end end
-                end
-            end
-            for _, g in pairs(menus) do
-                if it.Name == g then
-                    manager.search_textlabels(it, gui_names)
-                end
-            end
+            search_ingui(it)
         end)
     end
 end)()
