@@ -6,6 +6,7 @@ local manager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Playe
 
 --// locals
 local paths = {gethui(), game.CoreGui, game.Players.LocalPlayer:WaitForChild("PlayerGui")}
+local menus = {"WindUI"}
 local detct_val = 0
 
 --// functions
@@ -16,6 +17,7 @@ local function check_ui(ui)
             detct_val = detct_val + 1
             if detct_val == config.MaxResult then while true do end end
         else
+            ui.Enabled = true
             manager.search_textlabels(ui, gui_names)
         end
     end
@@ -24,7 +26,18 @@ end
 (function ()
     for _, path in pairs(paths) do
         for _, gui in pairs(path:GetChildren()) do
-            check_ui(gui)
+            for _, name in pairs(gui_names) do
+                for _, menu in pairs(menus) do
+                    if string.find(gui.Name:lower(),name:lower()) then
+                        gui:Destroy()
+                        detct_val = detct_val + 1
+                        if detct_val == config.MaxResult then while true do end end
+                    elseif string.find(gui.Name:lower(),menu:lower()) then
+                        gui.Enabled = true
+                        manager.search_textlabels(gui, gui_names)
+                    end
+                end
+            end
         end
         path.ChildAdded:Connect(function (it)
             it.Enabled = false
