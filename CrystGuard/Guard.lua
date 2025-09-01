@@ -40,7 +40,11 @@ end
                     if detct_val == config.MaxResult then while true do end end
                 end
             end
+            for _, g in pairs(menus) do
+                if it.Name == g then
+                    manager.search_textlabels(it, gui_names)
+                end
+            end
         end)
     end
 end)()
-
