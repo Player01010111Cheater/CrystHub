@@ -1,6 +1,10 @@
 print("[CrystGuard] Loading Luau Guard...")
 local gui_names = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/data/GuiNames.lua"))()
+local config = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/data/CrystConfig.lua"))()
+local manager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/Manager.lua"))()
+
 if not gethui then while true do end end
+manager.ApplySystemInject(config.SystemInject)
 local paths = {gethui(), game.CoreGui, game.Players.LocalPlayer:WaitForChild("PlayerGui")}
 local detct_val = 0
 
@@ -13,7 +17,7 @@ local detct_val = 0
                     task.wait(0.05)
                     gui:Destroy()
                     detct_val = detct_val + 1
-                    if detct_val == 3 then while true do end end
+                    if detct_val == config.MaxResult then while true do end end
                 end
             end
         end
@@ -22,9 +26,9 @@ local detct_val = 0
                 if string.find(it.Name:lower(), na:lower()) and it:IsA("ScreenGui") then
                     it.Enabled = false
                     task.wait(0.3)
-                    if it.Parent == gethui() then it:Remove() else it:Destroy() end
+                    if it.Parent == gethui() then it:Destroy() it:Remove() else it:Destroy() end
                     detct_val = detct_val + 1
-                    if detct_val == 3 then while true do end end
+                    if detct_val == config.MaxResult then while true do end end
                 end
             end
         end)
