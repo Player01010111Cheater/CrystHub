@@ -7,7 +7,7 @@ return function()
     blur.Size = 0
     TweenService:Create(blur, TweenInfo.new(0.5), {Size = 26}):Play()
     
-    local screenGui = Instance.new("ScreenGui", gethui())
+    local screenGui = Instance.new("ScreenGui", game.Players.LocalPlayer:WaitForChild("PlayerGui"))
     screenGui.Name = "CrystalLoader"
     screenGui.ResetOnSpawn = false
     screenGui.IgnoreGuiInset = true
