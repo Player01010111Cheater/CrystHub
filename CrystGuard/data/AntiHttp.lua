@@ -1,4 +1,5 @@
 print("[CrystGuard] Loading AntiHttp...")
+
 local functions = {
     rconsoleprint,
     print,
@@ -9,38 +10,33 @@ local functions = {
     error
 }
 
-for i, v in next, functions do
-    local old
-    old =
-        hookfunction(
-        v,
-        newcclosure(
-            function(...)
+for _, fn in next, functions do
+    if typeof(fn) == "function" then
+        local old
+        old = hookfunction(
+            fn,
+            newcclosure(function(...)
                 local args = {...}
-                for i, v in next, args do
-                    if tostring(i):find("https") or tostring(v):find("https") then
-                        while true do
-                        end
+                for _, arg in next, args do
+                    if type(arg) == "string" and arg:find("https") then
+                        while true do end
                     end
                 end
                 return old(...)
-            end
+            end)
         )
-    )
-end
-
-if _G.ID then
-    while true do
     end
 end
-setmetatable(
-    _G,
-    {
-        __newindex = function(t, i, v)
-            if tostring(i) == "ID" then
-                while true do
-                end
-            end
+
+if rawget(_G, "ID") then
+    while true do end
+end
+
+setmetatable(_G, {
+    __newindex = function(t, i, v)
+        if tostring(i) == "ID" then
+            while true do end
         end
-    }
-)
+        rawset(t, i, v)
+    end
+})
