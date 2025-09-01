@@ -1,4 +1,4 @@
-print("[Debug] 123.")
+print("[CrystGuard] Loading AntiHttp...")
 local functions = {
     rconsoleprint,
     print,
