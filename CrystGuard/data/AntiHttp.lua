@@ -1,9 +1,9 @@
-print("[CrystGuard] Loading AntiHttp..")
 local functions = {
     rconsoleprint,
     setclipboard,
     rconsoleerr,
     rconsolewarn,
+    print,
     warn,
     error
 }
