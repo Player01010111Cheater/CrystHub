@@ -4,7 +4,6 @@ local config = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player
 local manager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/Manager.lua"))()
 
 if not gethui then while true do end end
-manager.ApplySystemInject(config.SystemInject)
 local paths = {gethui(), game.CoreGui, game.Players.LocalPlayer:WaitForChild("PlayerGui")}
 local detct_val = 0
 
