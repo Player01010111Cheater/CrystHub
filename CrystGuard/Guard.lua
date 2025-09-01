@@ -19,22 +19,23 @@ end
 local function search_ingui(guis)
     for _, menu in pairs(menus) do
         for _, name in pairs(gui_names) do
+            print(guis.Name)
             if string.find(guis.Name:lower(), name:lower()) then
                 del_ui(guis)
             elseif string.find(guis.Name:lower(), menu:lower()) then
+                print("finded ui")
                 manager.search_textlabels(menu, gui_names)
             end
         end
     end
 end
-for _, path in pairs(paths) do
-    for _, gui in pairs(path:GetChildren()) do
-        search_ingui(gui)
+(function ()
+    for _, path in pairs(paths) do
+        for _, gui in pairs(path:GetChildren()) do
+            search_ingui(gui)
+        end
+        path.ChildAdded:Connect(function (it)
+            search_ingui(it)
+        end)
     end
-    path.ChildAdded:Connect(function (it)
-        search_ingui(it)
-        print(it.Name)
-    end)
-    print(path)
-end
-
+end)()
