@@ -33,6 +33,7 @@ for _, path in pairs(paths) do
     end
     path.ChildAdded:Connect(function (it)
         search_ingui(it)
+        print(it.Name)
     end)
     print(path)
 end
