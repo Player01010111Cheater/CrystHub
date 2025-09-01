@@ -1,3 +1,4 @@
+print("[CrystGuard] Loading AntiHttp...")
 local functions = {
     rconsoleprint,
     print,
