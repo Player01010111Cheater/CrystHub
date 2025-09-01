@@ -17,8 +17,6 @@ local function check_ui(ui)
             if detct_val == config.MaxResult then while true do end end
         else
             manager.search_textlabels(ui, gui_names)
-            detct_val = detct_val + 1
-            if detct_val == config.MaxResult then while true do end end
         end
     end
 end
