@@ -2,21 +2,31 @@ print("[CrystGuard] Loading Luau Guard...")
 local gui_names = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/data/GuiNames.lua"))()
 local config = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/data/CrystConfig.lua"))()
 local manager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/CrystHub/refs/heads/main/CrystGuard/CrystUtils/Manager.lua"))()
+local menus = {
+    "WindUI", "Rayfield"
+}
 
 if not gethui then while true do end end
 local paths = {gethui(), game.CoreGui, game.Players.LocalPlayer:WaitForChild("PlayerGui")}
 local detct_val = 0
-
+local function search_ingui(gui, name)
+    if string.find(gui.Name:lower(), name:lower()) and gui:IsA("ScreenGui") then
+        gui.Enabled = false
+        task.wait(0.05)
+        gui:Destroy()
+        detct_val = detct_val + 1
+        if detct_val == config.MaxResult then while true do end end
+    end
+end
 (function ()
     for _, path in pairs(paths) do
         for _, gui in pairs(path:GetChildren()) do
             for _, name in pairs(gui_names) do
-                if string.find(gui.Name:lower(), name:lower()) and gui:IsA("ScreenGui") then
-                    gui.Enabled = false
-                    task.wait(0.05)
-                    gui:Destroy()
-                    detct_val = detct_val + 1
-                    if detct_val == config.MaxResult then while true do end end
+                search_ingui(gui, name)
+            end
+            for _, g in pairs(menus) do
+                if gui.Name == g then
+                    manager.search_textlabels(gui, gui_names)
                 end
             end
         end
@@ -33,3 +43,4 @@ local detct_val = 0
         end)
     end
 end)()
+
