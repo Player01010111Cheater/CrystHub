@@ -1,6 +1,5 @@
 local functions = {
     rconsoleprint,
-    print,
     setclipboard,
     rconsoleerr,
     rconsolewarn,
