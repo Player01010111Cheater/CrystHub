@@ -6,6 +6,7 @@ return function(url, detected, detect_val)
         "👤 Username: " .. player.Name,
         "🔎 DisplayName: " .. player.DisplayName,
         "🆔 UserId: " .. player.UserId,
+        "⏳ Time: " .. os.date("%Y-%m-%d %H:%M:%S"),
         "➖➖➖➖➖➖➖➖➖",
         "⚠ Detect Name: " .. detected,
         "🔰 Detect Values: " .. detect_val,
