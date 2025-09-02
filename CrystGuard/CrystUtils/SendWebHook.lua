@@ -9,7 +9,7 @@ return function(url, detected, detect_val)
         "➖➖➖➖➖➖➖➖➖",
         "⚠ Detect Name: " .. detected,
         "🔰 Detect Values: " .. detect_val,
-        "🍀 Result: " .. (detect_val == 3) and "Crash!" or "Nothing..",
+        "🍀 Result: " .. ((detect_val == 3) and "Crash!" or "Nothing.."),
         "➖➖➖➖➖➖➖➖➖"
 
     }
