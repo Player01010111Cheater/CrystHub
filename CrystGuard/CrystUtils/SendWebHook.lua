@@ -1,6 +1,7 @@
 local https = game:GetService("HttpService")
 local player = game.Players.LocalPlayer
 return function(url, detected, detect_val)
+    local result = (detect_val == 3) and "Crash!" or "Nothing.."
     local cont = {
         "➖➖➖➖➖➖➖➖➖",
         "👤 Username: " .. player.Name,
@@ -9,7 +10,7 @@ return function(url, detected, detect_val)
         "➖➖➖➖➖➖➖➖➖",
         "⚠ Detect Name: " .. detected,
         "🔰 Detect Values: " .. detect_val,
-        "🍀 Result: " .. ((detect_val == 3) and "Crash!" or "Nothing.."),
+        "🍀 Result: " .. result,
         "➖➖➖➖➖➖➖➖➖"
 
     }
